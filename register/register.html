@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="booking-content">
+                <div class="booking-image">
+                    <img class="booking-img" src="images/cr4.jpg" alt="Booking Image">
+                </div>
+                <div class="booking-form">
+                    <form method="post" action="../php/register.php" id="booking-form">
+                        <h2>Register</h2>
+                        <div class="form-group form-input">
+                            <input type="text" name="name" id="name" value="" required/>
+                            <label for="name" class="form-label">Name</label>
+                        </div>
+                        <div class="form-group form-input">
+                            <input type="text" name="email" id="name" value="" required/>
+                            <label for="name" class="form-label">Email</label>
+                        </div>
+                        <div class="form-group form-input">
+                            <input type="number" name="phone" id="phone" value="" required />
+                            <label for="phone" class="form-label">Phone number</label>
+                        </div>
+                        <div class="form-group form-input">
+                            <input type="password" name="password" id="password" value="" required />
+                            <label for="password" class="form-label">Password</label>
+                            <span class="toggle-password" onclick="togglePasswordVisibility('password')">&#x1F441;</span>
+                        </div>
+                        
+                        <script>
+                            function togglePasswordVisibility(inputId) {
+                                const passwordInput = document.getElementById(inputId);
+                                if (passwordInput.type === "password") {
+                                    passwordInput.type = "text";
+                                } else {
+                                    passwordInput.type = "password";
+                                }
+                            }
+                        </script>
+                        
+                        <style>
+                            .toggle-password {
+                                cursor: pointer;
+                                position: absolute;
+                                right: 10px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+                        </style>
+                        
+                        
+                        <div class="form-group">
+                            <div class="select-list">
+                                <select name="usertype" id="usertype" required>
+                                    <option value="1" selected>Player</option>
+                                    <option value="2">Turf</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                            <input type="submit" value="Register" class="submit"  name="submit" />
+                           
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
