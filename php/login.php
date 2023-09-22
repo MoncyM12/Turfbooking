@@ -65,7 +65,7 @@ if (isset($_POST['sub'])) {
                                 icon: 'success',
                                 text: 'Welcome Back',
                                 didClose: () => {
-                                window.location.replace('../turf2/index.html');
+                                window.location.replace('../turf2/index.php');
                                 }
                                 });
 
