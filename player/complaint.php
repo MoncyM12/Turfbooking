@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include("header.php");
 
 
@@ -13,7 +13,7 @@ include("header.php");
 
 
 
-?>
+
 
 <main id="main" class="main">
 
@@ -53,8 +53,8 @@ include("header.php");
                 <option selected disabled>Select Type</option>
 
                 
-                  <option value="car">Car</option>
-                  <option value="servive">Service</option>
+                  <option value="car">Turf</option>
+                  
                   <option value="website">Website</option>
 
 
