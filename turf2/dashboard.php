@@ -31,7 +31,7 @@ include "header.php"
             <div class="col-lg-6">
               <div class="info-box card">
                 <i class="bi bi-telephone"></i>
-                <h3>Slot Details</h3>
+                <h3>bookings</h3>
                <!-- <p>+1 5589 55488 55<br>+1 6678 254445 41</p>-->
               </div>
             </div>
@@ -45,7 +45,7 @@ include "header.php"
             <div class="col-lg-6">
               <div class="info-box card">
                 <i class="bi bi-clock"></i>
-                <h3>Open Hours</h3>
+                <a href="turfprofile.php"><h3>Profile</h3></a><h3>My Turf</h3>
                 <!--<p>Monday - Friday<br>9:00AM - 05:00PM</p>-->
               </div>
             </div>

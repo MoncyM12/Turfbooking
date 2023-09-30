@@ -289,7 +289,7 @@ require("../connect.php");
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="dashboard.php">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -489,7 +489,7 @@ require("../connect.php");
       </li><!-- End Contact Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="turfd.html">
+        <a class="nav-link collapsed" href="turfprofile.php">
           <i class="bi bi-card-list"></i>
           <span>Turf Updates</span>
         </a>
