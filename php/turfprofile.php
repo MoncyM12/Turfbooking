@@ -20,7 +20,7 @@ if(isset($_POST["submit"])){
     $t_image=$_POST['image'];
     $t_id=$_POST['id_proof'];
     $t_price=$_POST['price'];
-    $sql="select * from turf where owner_email='$owner'";
+    $sql="select * from turf where email='$t_email'";
     $res=select_data($sql);
     $c=mysqli_num_rows($res);
     echo $c;
@@ -34,7 +34,7 @@ if(isset($_POST["submit"])){
                 icon: 'error',
                 text: 'Already Registered',
                 didClose: () => {
-                    window.location.replace('../turf2/header.php');
+                    window.location.replace('../turf2/turfprofile.php');
                 }
             });
         </script>
@@ -100,7 +100,7 @@ if(isset($_POST["update"])){
     #echo $sql;
     if($c)
     {
-        $up="UPDATE turf SET `email`='$t_email' `name`='$t_name',`city`='$t_city',`about`='$t_about',`image`='$t_image',`id_proof`='$t_id',`price`='$t_price' WHERE `owner_email`='$owner';";
+        $up="UPDATE turf SET email='$t_email', name='$t_name',city='$t_city',about='$t_about',`image`='$t_image',`id_proof`='$t_id',`price`='$t_price' WHERE `owner_email`='$owner';";
     }
 
 
