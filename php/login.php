@@ -50,7 +50,7 @@ if (isset($_POST['sub'])) {
                                 icon: 'success',
                                 text: 'Welcome Back',
                                 didClose: () => {
-                                window.location.replace('../player/index.php');
+                                window.location.replace('../player/header.php');
                                 }
                                 });
                         </script>
@@ -65,7 +65,7 @@ if (isset($_POST['sub'])) {
                                 icon: 'success',
                                 text: 'Welcome Back',
                                 didClose: () => {
-                                window.location.replace('../turf2/dashboard.php');
+                                window.location.replace('../turf2/header.php');
                                 }
                                 });
 

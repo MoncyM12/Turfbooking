@@ -3,7 +3,7 @@ session_start();
 
 
 
-require("../connect.php");
+require("connect.php");
 
    
    $username = $_SESSION['email'];
@@ -20,7 +20,7 @@ require("../connect.php");
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <title>Turf</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -59,18 +59,18 @@ require("../connect.php");
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">NiceAdmin</span>
+        <img src="assets/img/lg.png" alt="">
+        <span class="d-none d-lg-block">Turf Information</span>
       </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <i class="bi b-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-    <div class="search-bar">
+    <!--div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
         <input type="text" name="query" placeholder="Search" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
-    </div><!-- End Search Bar -->
+    </div--><!-- End Search Bar -->
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
@@ -83,12 +83,12 @@ require("../connect.php");
 
         <li class="nav-item dropdown">
 
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-bell"></i>
-            <span class="badge bg-primary badge-number">4</span>
+          <a class="nav-link na-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi i-bel"></i>
+            <span class="adge bg-primary badge-number"></span>
           </a><!-- End Notification Icon -->
 
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+          <!--ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
             <li class="dropdown-header">
               You have 4 new notifications
               <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
@@ -152,18 +152,18 @@ require("../connect.php");
               <a href="#">Show all notifications</a>
             </li>
 
-          </ul><!-- End Notification Dropdown Items -->
+          </ul><-- End Notification Dropdown Items >
 
-        </li><!-- End Notification Nav -->
+        </li--><!-- End Notification Nav -->
 
         <li class="nav-item dropdown">
 
           <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-chat-left-text"></i>
-            <span class="badge bg-success badge-number">3</span>
+            <i class="bi bi-chat-lef-text"></i>
+            <span class="badge bg-success badge-number"></span>
           </a><!-- End Messages Icon -->
 
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+          <!--ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
             <li class="dropdown-header">
               You have 3 new messages
               <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
@@ -218,14 +218,14 @@ require("../connect.php");
               <a href="#">Show all messages</a>
             </li>
 
-          </ul><!-- End Messages Dropdown Items -->
+          </ul><-- End Messages Dropdown Items ->
 
-        </li><!-- End Messages Nav -->
+        </li--><!-- End Messages Nav -->
 
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <!--img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle"-->
             <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $arr['name'];?></span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -269,7 +269,7 @@ require("../connect.php");
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="../php/logout.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -291,7 +291,7 @@ require("../connect.php");
       <li class="nav-item">
         <a class="nav-link " href="dashboard.php">
           <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+          <span>Home</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
@@ -475,16 +475,16 @@ require("../connect.php");
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        <a class="nav-link collapsed" href="user_view/turf_view.php">
           <i class="bi bi-question-circle"></i>
-          <span>Edit Profile</span>
+          <span>Your Turfs</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
+        <a class="nav-link collapsed" href="complaint.php">
           <i class="bi bi-envelope"></i>
-          <span>Contact</span>
+          <span>Complaints</span>
         </a>
       </li><!-- End Contact Page Nav -->
 
@@ -496,7 +496,7 @@ require("../connect.php");
       </li><!-- End Register Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="../php/logout.php">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Logout</span>
         </a>

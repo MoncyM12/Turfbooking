@@ -47,7 +47,7 @@ if ($c==0)
 {
 
     $sql="INSERT INTO turf(name,email,city,about,image,id_proof,price,owner_email) VALUES ('$t_name','$t_email','$t_city','$t_about','$t_image','$t_id','$t_price','$owner')";
-    echo $sql;
+    #echo $sql;
     
     if (insert_data($sql)) { 
         ?>
@@ -56,7 +56,7 @@ if ($c==0)
                 icon: 'success',
                 text: 'Added Successfully',
                 didClose: () => {
-                    window.location.replace('../turf2/header.php');
+                    window.location.replace('../turf2/turfprofile.php');
                 }
             });
         </script>
@@ -100,7 +100,7 @@ if(isset($_POST["update"])){
     #echo $sql;
     if($c)
     {
-        $up="UPDATE turf SET email='$t_email', name='$t_name',city='$t_city',about='$t_about',`image`='$t_image',`id_proof`='$t_id',`price`='$t_price' WHERE `owner_email`='$owner';";
+        $up="UPDATE turf SET  name='$t_name',city='$t_city',about='$t_about',`image`='$t_image',`id_proof`='$t_id',`price`='$t_price' WHERE `owner_email`='$owner';";
     }
 
 
@@ -112,7 +112,7 @@ if(isset($_POST["update"])){
                 icon: 'error',
                 text: 'Data not exists',
                 didClose: () => {
-                    window.location.replace('../turf2/header.php');
+                    window.location.replace('../turf2/turfprofile.php');
                 }
             });
         </script>
@@ -126,7 +126,7 @@ if(isset($_POST["update"])){
                 icon: 'success',
                 text: 'Updated. Successfully',
                 didClose: () => {
-                    window.location.replace('../turf2/header.php');
+                    window.location.replace('../turf2/turfprofile.php');
                 }
             });
         </script>

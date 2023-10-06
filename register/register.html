@@ -36,34 +36,55 @@
                             <input type="number" name="phone" id="phone" value="" required />
                             <label for="phone" class="form-label">Phone number</label>
                         </div>
-                        <div class="form-group form-input">
-                            <input type="password" name="password" id="password" value="" required />
-                            <label for="password" class="form-label">Password</label>
-                            <span class="toggle-password" onclick="togglePasswordVisibility('password')">&#x1F441;</span>
-                        </div>
-                        
-                        <script>
-                            function togglePasswordVisibility(inputId) {
-                                const passwordInput = document.getElementById(inputId);
-                                if (passwordInput.type === "password") {
-                                    passwordInput.type = "text";
-                                } else {
-                                    passwordInput.type = "password";
-                                }
-                            }
-                        </script>
-                        
-                        <style>
-                            .toggle-password {
-                                cursor: pointer;
-                                position: absolute;
-                                right: 10px;
-                                top: 50%;
-                                transform: translateY(-50%);
-                            }
-                        </style>
-                        
-                        
+                        <!-- ... (previous HTML code) ... -->
+
+<div class="form-group form-input">
+    <input type="password" name="password" id="password" value="" required />
+    <label for="password" class="form-label">Password</label>
+    <span class="toggle-password" onclick="togglePasswordVisibility('password')">&#x1F441;</span>
+</div>
+
+<!-- Add the "Confirm Password" field with an eye icon -->
+<div class="form-group form-input">
+    <input type="password" name="cpassword" id="cpassword" value="" required />
+    <label for="cpassword" class="form-label">Confirm Password</label>
+    <span class="toggle-password" onclick="toggleConfirmPasswordVisibility('cpassword')">&#x1F441;</span>
+</div>
+
+<!-- ... (remaining HTML code) ... -->
+
+<!-- JavaScript for toggling password visibility -->
+<script>
+    function togglePasswordVisibility(inputId) {
+        const passwordInput = document.getElementById(inputId);
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+    }
+
+    function toggleConfirmPasswordVisibility(inputId) {
+        const confirmPasswordInput = document.getElementById(inputId);
+        if (confirmPasswordInput.type === "password") {
+            confirmPasswordInput.type = "text";
+        } else {
+            confirmPasswordInput.type = "password";
+        }
+    }
+</script>
+
+<!-- CSS for the toggle password icon -->
+<style>
+    .toggle-password {
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+</style>
+
                         <div class="form-group">
                             <div class="select-list">
                                 <select name="usertype" id="usertype" required>

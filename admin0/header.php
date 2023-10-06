@@ -59,8 +59,8 @@ require("../connect.php");
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">NiceAdmin</span>
+        <img src="assets/im/logo.png" alt="">
+        <span class="d-none d-lg-block">Admin</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -482,7 +482,7 @@ require("../connect.php");
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="complaint.php">
+        <a class="nav-link collapsed" href="verifyturf.php">
           <i class="bi bi-envelope"></i>
           <span>Turf Verification</span>
         </a>
@@ -503,16 +503,16 @@ require("../connect.php");
       </li><!-- End Login Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-error-404.html">
+        <a class="nav-link collapsed" href="verifiedturf.php">
           <i class="bi bi-dash-circle"></i>
-          <span>Error 404</span>
+          <span>Verified Turf</span>
         </a>
       </li><!-- End Error 404 Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
+        <a class="nav-link collapsed" href="complaints.php">
           <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
+          <span>Complaints</span>
         </a>
       </li><!-- End Blank Page Nav -->
 

@@ -33,7 +33,7 @@ include("header.php");
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+              <img src="assets/img/profile-im.jpg" alt="Profile" class="rounded-circle">
               <h2><?php echo $arr['name'];?></h2>
               <h3></h3>
               <div class="social-links mt-2">
@@ -63,7 +63,7 @@ include("header.php");
                 </li>
 
                 <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings"></button>
                 </li>
 
                 <li class="nav-item">
@@ -74,8 +74,8 @@ include("header.php");
               <div class="tab-content pt-2">
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                  <h5 class="card-title">About</h5>
-                  <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
+                  <h5 class="card-title">Alert</h5>
+                  <p class="small fst-italic">You have to fill  the balance details</p>
 
                   <h5 class="card-title">Profile Details</h5>
 
@@ -127,7 +127,7 @@ include("header.php");
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div class="col-md-8 col-lg-9">
-                        <img src="assets/img/profile-img.jpg" alt="Profile">
+                        <img src="assets/img/prfile-img.jpg" alt="Profile">
                         <div class="pt-2">
                           <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
                           <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
@@ -272,12 +272,39 @@ include("header.php");
                   <!-- Change Password Form -->
                   <form action="../php/passwordupdate.php" method="post">
 
-                  <div class="row mb-3">
+                  <!-- Current Password -->
+<div class="row mb-3">
     <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
     <div class="col-md-8 col-lg-9">
         <div class="input-group">
             <input name="cpass" type="password" class="form-control" id="currentPassword">
-            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+            <button class="btn btn-outline-secondary toggle-password" type="button">
+                <i class="bi bi-eye"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- New Password -->
+<div class="row mb-3">
+    <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+    <div class="col-md-8 col-lg-9">
+        <div class="input-group">
+            <input name="npass" type="password" class="form-control" id="newPassword">
+            <button class="btn btn-outline-secondary toggle-password" type="button">
+                <i class="bi bi-eye"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Re-enter New Password -->
+<div class="row mb-3">
+    <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
+    <div class="col-md-8 col-lg-9">
+        <div class="input-group">
+            <input name="cnpass" type="password" class="form-control" id="renewPassword">
+            <button class="btn btn-outline-secondary toggle-password" type="button">
                 <i class="bi bi-eye"></i>
             </button>
         </div>
@@ -285,40 +312,22 @@ include("header.php");
 </div>
 
 <script>
-    const passwordInput = document.getElementById("currentPassword");
-    const togglePasswordButton = document.getElementById("togglePassword");
+    const togglePasswordButtons = document.querySelectorAll(".toggle-password");
 
-    togglePasswordButton.addEventListener("click", function () {
-        if (passwordInput.type === "password") {
-            passwordInput.type = "text";
-        } else {
-            passwordInput.type = "password";
-        }
+    togglePasswordButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+            const passwordInput = button.previousElementSibling; // Find the associated password input field
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        });
     });
 </script>
-
-
-
-
-
-                    <div class="row mb-3">
-                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="npass" type="password" class="form-control" id="newPassword">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="cnpass" type="password" class="form-control" id="renewPassword">
-                      </div>
-                    </div>
-
-                    <div class="text-center">
+<div class="text-center">
                       <button name="submit" type="submit" class="btn btn-primary">Change Password</button>
                     </div>
-                  </form><!-- End Change Password Form -->
 
                 </div>
 

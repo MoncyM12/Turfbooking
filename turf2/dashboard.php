@@ -45,7 +45,7 @@ include "header.php"
             <div class="col-lg-6">
               <div class="info-box card">
                 <i class="bi bi-clock"></i>
-                <a href="turfprofile.php"><h3>Profile</h3></a><h3>My Turf</h3>
+                <a href="turfprofile.php"><h3>My Turf</h3></a>
                 <!--<p>Monday - Friday<br>9:00AM - 05:00PM</p>-->
               </div>
             </div>
