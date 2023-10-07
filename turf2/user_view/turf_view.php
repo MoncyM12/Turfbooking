@@ -133,7 +133,9 @@ $username = $_SESSION['email'];
                             <h4><a href="#blog" class="blog-desc">
                             <?php echo $row['name']; ?> </a></h4>
                             <p class="mt-3"><?php echo $row['city']; ?></p>
-                            <a href="#blog" class="read">Read more</a>
+                            <td>
+    <a href="turfdetails.php?email=<?php echo $email; ?>" class="btn btn-primary">View More</a>
+</td>
                         </div>
                     </div>
                 </div>

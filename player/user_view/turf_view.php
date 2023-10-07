@@ -106,6 +106,8 @@ $username = $_SESSION['email'];
             $sql = "select * from turf";
             $res = select_data($sql);
             $n=mysqli_num_rows($res);
+            $re=mysqli_fetch_array($res);
+            $email=$re['email'];
             ?>
              
     <div class="w3l-news py-5" id="homeblog">
@@ -113,13 +115,16 @@ $username = $_SESSION['email'];
             <h3 class="title-style text-center mb-lg-5 mb-4"><span></span> Turfs</h3>
             <div class="row justify-content-left">
                 <?php
-                for($i=0;$i<$n;$i++)
-                {$row=mysqli_fetch_array($res);
+               while($row=mysqli_fetch_assoc($res))
+                {#$row=mysqli_fetch_array($res);
+                    $image=$row['image'];
+                    $image2="../../image/".$image;
+                    #echo $image2;
                     ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="grids5-info">
-                        <a href="#blog" class="blog-image d-block zoom"><img src="assets/images/blog1.jpg"
-                                alt="" class="img-fluid news-image" />
+                        <a href="#blog" class="blog-image d-block zoom"><img src=<?php echo $image2;?>
+                                alt="" class="img-fluid news-image"/>
                             <div class="image-overlay">
                                 <span class="fas fa-plus"></span>
                             </div>
@@ -134,7 +139,7 @@ $username = $_SESSION['email'];
                             <?php echo $row['name']; ?> </a></h4>
                             <p class="mt-3"><?php echo $row['city']; ?></p>
                             <td>
-    <a href=""  class="btn btn-primary">Book Now</a>
+    <a href="turfdetails.php?email=<?php echo $email; ?>" class="btn btn-primary">View More</a>
 </td>
                         </div>
                     </div>
