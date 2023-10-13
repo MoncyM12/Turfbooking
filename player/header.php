@@ -475,9 +475,9 @@ require("connect.php");
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        <a class="nav-link collapsed" href="available.php">
           <i class="bi bi-question-circle"></i>
-          <span>Edit Profile</span>
+          <span>Available Slots</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
 

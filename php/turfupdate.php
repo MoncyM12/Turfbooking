@@ -8,10 +8,8 @@
 <body>
 
 <?php
-session_start();
-$owner=$_SESSION['email'];
 require("../connect.php");
-if(isset($_POST["submit"])){
+if(isset($_POST["update"])){
     
     $t_name=$_POST['name'];
     $t_email=$_POST['email'];
@@ -23,40 +21,36 @@ if(isset($_POST["submit"])){
     $sql="select * from turf where email='$t_email'";
     $res=select_data($sql);
     $c=mysqli_num_rows($res);
-    echo $c;
+    #echo $sql;
     if($c)
     {
+        $up="UPDATE turf SET  name='$t_name',city='$t_city',about='$t_about',`image`='$t_image',`id_proof`='$t_id',`price`='$t_price' WHERE `email`='$t_email';";
+    }
 
 
+    if($c==0)
+    {
         ?>
         <script>
             Swal.fire({
                 icon: 'error',
-                text: 'Already Registered',
+                text: 'Data not exists',
                 didClose: () => {
-                    window.location.replace('../turf2/turfprofile.php');
+                    window.location.replace('../turf2/user_view/turf_view.php');
                 }
             });
         </script>
-        <?php
-   
-       
+        <?php   
     }
     
-if ($c==0)
-{
-
-    $sql="INSERT INTO turf(name,email,city,about,image,id_proof,price,owner_email) VALUES ('$t_name','$t_email','$t_city','$t_about','$t_image','$t_id','$t_price','$owner')";
-    #echo $sql;
-    
-    if (insert_data($sql)) { 
+    if (update_data($up)) { 
         ?>
         <script>
             Swal.fire({
                 icon: 'success',
-                text: 'Added Successfully',
+                text: 'Updated. Successfully',
                 didClose: () => {
-                    window.location.replace('../turf2/turfprofile.php');
+                    window.location.replace('../turf2/user_view/turf_view.php');
                 }
             });
         </script>
@@ -67,7 +61,7 @@ if ($c==0)
                 icon: 'error',
                 text: 'unsuccessfully',
                 didClose: () => {
-                    window.location.replace('../turf2/turfprofile.php');
+                    window.location.replace('../turf2/user_view/turf_view.php');
                 }
             });
         </script>
@@ -76,9 +70,8 @@ if ($c==0)
 
     <?php
     }
- }
 }
-
+   
 
 
 

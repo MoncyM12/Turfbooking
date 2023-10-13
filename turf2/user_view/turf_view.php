@@ -110,16 +110,20 @@ $username = $_SESSION['email'];
              
     <div class="w3l-news py-5" id="homeblog">
         <div class="container py-lg-5 py-md-4 py-2">
-            <h3 class="title-style text-center mb-lg-5 mb-4"><span>My</span> Turfs</h3>
+            <h3 class="title-style text-center mb-lg-5 mb-4"><span></span> Turfs</h3>
             <div class="row justify-content-left">
-                <?php
+            <?php
                 for($i=0;$i<$n;$i++)
                 {$row=mysqli_fetch_array($res);
+                #$row=mysqli_fetch_array($res);
+                    #$image=$row['image'];
+                    #$image2="../../image/".$image;
+                    #echo $image2;
                     ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="grids5-info">
-                        <a href="#blog" class="blog-image d-block zoom"><img src="assets/images/blog1.jpg"
-                                alt="" class="img-fluid news-image" />
+                        <a href="#blog" class="blog-image d-block zoom"><img src=<?php echo $row['image'];?>
+                                alt="" class="img-fluid news-image"/>
                             <div class="image-overlay">
                                 <span class="fas fa-plus"></span>
                             </div>
@@ -134,7 +138,10 @@ $username = $_SESSION['email'];
                             <?php echo $row['name']; ?> </a></h4>
                             <p class="mt-3"><?php echo $row['city']; ?></p>
                             <td>
-    <a href="turfdetails.php?email=<?php echo $email; ?>" class="btn btn-primary">View More</a>
+    <a href="turfdetails.php?email=<?php echo $row['email']; ?>" class="btn btn-primary">View More</a>
+</td>
+<td>
+    <a href="../turfupdate.php?email=<?php echo $row['email']; ?>" class="btn btn-primary">Update</a>
 </td>
                         </div>
                     </div>

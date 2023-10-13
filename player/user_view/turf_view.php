@@ -106,20 +106,19 @@ $username = $_SESSION['email'];
             $sql = "select * from turf";
             $res = select_data($sql);
             $n=mysqli_num_rows($res);
-            $re=mysqli_fetch_array($res);
-            $email=$re['email'];
             ?>
              
     <div class="w3l-news py-5" id="homeblog">
         <div class="container py-lg-5 py-md-4 py-2">
             <h3 class="title-style text-center mb-lg-5 mb-4"><span></span> Turfs</h3>
             <div class="row justify-content-left">
-                <?php
-               while($row=mysqli_fetch_assoc($res))
-                {#$row=mysqli_fetch_array($res);
-                    $image=$row['image'];
+            <?php
+                for($i=0;$i<$n;$i++)
+                {$row=mysqli_fetch_array($res);
+                #$row=mysqli_fetch_array($res);
+                    #$image=$row['image'];
                     $image2="../../image/".$image;
-                    #echo $image2;
+                    echo $image2;
                     ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="grids5-info">
@@ -139,7 +138,7 @@ $username = $_SESSION['email'];
                             <?php echo $row['name']; ?> </a></h4>
                             <p class="mt-3"><?php echo $row['city']; ?></p>
                             <td>
-    <a href="turfdetails.php?email=<?php echo $email; ?>" class="btn btn-primary">View More</a>
+    <a href="turfdetails.php?email=<?php echo $row['email']; ?>" class="btn btn-primary">View More</a>
 </td>
                         </div>
                     </div>

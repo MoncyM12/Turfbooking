@@ -7,8 +7,8 @@ Author URL: http://w3layouts.com
     $email=$_GET['email'];
     $sql="SELECT * FROM turf  WHERE email='$email'";
     $res=select_data($sql);
-    $arr=mysqli_fetch_assoc($res);
-
+    $row=mysqli_fetch_assoc($res);
+    
 
     ?>
 <!doctype html>
@@ -18,7 +18,7 @@ Author URL: http://w3layouts.com
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dress-Up - Fashion Category Bootstrap Responsive Website Template - Services : W3Layouts</title>
+    <title>Turf Booking</title>
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
 </head>
@@ -29,7 +29,7 @@ Author URL: http://w3layouts.com
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <!--a class="navbar-brand" href="index.html"-->
-                    <h5><span> <?php echo $arr['name']; ?> </span></h5>
+                    <h5><span> <?php echo $row['name']; ?> </span></h5>
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
@@ -82,7 +82,7 @@ Author URL: http://w3layouts.com
     <section class="inner-banner py-5">
         <div class="w3l-breadcrumb py-lg-5">
             <div class="container pt-4 pb-sm-4">
-                <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4"><?php echo $arr['email']; ?></h4>
+                <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4"><?php echo $row['email']; ?></h4>
                 <ul class="breadcrumbs-custom-path">
                     <li><a>Home</a></li>
                     <li class="active"><i class="fas fa-angle-right mx-2"></i>Services</li>
@@ -99,43 +99,43 @@ Author URL: http://w3layouts.com
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="grids5-info">
-                        <a href="services.tml" class="blog-image d-block zoom"><img src="assets/images/s1.jpg" alt=""
+                        <a href="services.tml" class="blog-image d-block zoom"><img src=<?php echo $row['image'];?> alt=""
                                 class="img-fluid radius-image" />
-                            <div class="image-overlay">
+                            <!--div class="image-overlay">
                                 <h4>Measurements</h4>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
                             </div>
                             <div class="iconic-plus">
                                 <i class="fas fa-plus"></i>
-                            </div>
+                            </div-->
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 mt-sm-0 mt-4">
                     <div class="grids5-info">
-                        <a href="services.html" class="blog-image d-block zoom"><img src="assets/images/s2.jpg" alt=""
+                        <a href="services.html" class="blog-image d-block zoom"><img src=<?php echo $row['image'];?> alt=""
                                 class="img-fluid radius-image" />
-                            <div class="image-overlay">
+                            <!--div class="image-overlay">
                                 <h4>Repair</h4>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
                             </div>
                             <div class="iconic-plus">
                                 <i class="fas fa-plus"></i>
-                            </div>
+                            </div-->
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 mt-lg-0 mt-4">
                     <div class="grids5-info">
-                        <a href="services.html" class="blog-image d-block zoom"><img src="assets/images/s3.jpg" alt=""
+                        <a href="services.html" class="blog-image d-block zoom"><img src=<?php echo $row['image'];?> alt=""
                                 class="img-fluid radius-image" />
-                            <div class="image-overlay">
+                            <!--div class="image-overlay">
                                 <h4>Cutting-out</h4>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
                             </div>
                             <div class="iconic-plus">
                                 <i class="fas fa-plus"></i>
-                            </div>
+                            </div-->
                         </a>
                     </div>
                 </div>
@@ -147,12 +147,12 @@ Author URL: http://w3layouts.com
         <div class="container py-lg-5 py-md-4 py-2">
             <div class="row align-items-center">
                 <div class="col-lg-6 section-width pe-xl-5">
-                    <h3 class="title-style"><span>More About</span> <?php echo $arr['name']; ?></h3>
-                    <p class="mt-4"> <?php echo $arr['about']; ?></p>
+                    <h3 class="title-style"><span>More About</span> <?php echo $row['name']; ?></h3>
+                    <p class="mt-4"> <?php echo $row['about']; ?></p>
                     <p class="mt-4 pb-dm-3"></p>
-                    <a  class="btn btn-style mt-4"></a>
+                    <!--a  class="btn btn-style mt-4"></a-->
                 </div>
-                <div class="col-lg-6 history-info mt-lg-0 mt-5 pt-md-4 pt-2">
+                <!--div class="col-lg-6 history-info mt-lg-0 mt-5 pt-md-4 pt-2">
                     <div class="position-relative img-border">
                         <img src="assets/images/blog4.jpg" class="img-fluid video-popup-image" alt="video-popup">
 
@@ -162,13 +162,13 @@ Author URL: http://w3layouts.com
                             </span>
                         </a>
 
-                        <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                        <-- dialog itself, mfp-hide class is required to make dialog hidden ->
                         <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
                             <iframe src="https://player.vimeo.com/video/333569091?h=9836ac4d97"
                                 allowfullscreen></iframe>
                         </div>
                     </div>
-                </div>
+                </div-->
             </div>
         </div>
     </section>
@@ -207,7 +207,7 @@ Author URL: http://w3layouts.com
                         <div class="card-body">
                             <h4 class="text-uppercase text-center mb-3">Price/Hour</h4>
                             <h5 class="card-title pricing-card-title">
-                                <span class="align-top">₹</span><?php echo $arr['price']; ?>
+                                <span class="align-top">₹</span><?php echo $row['price']; ?>
 
                             </h5>
                             <!--ul class="list-unstyled mt-3 mb-4">
