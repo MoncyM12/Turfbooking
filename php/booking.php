@@ -11,7 +11,7 @@ session_start();
 include("../connect.php"); // Check that your connect.php is correctly configured for MySQLi
 
 $username = $_SESSION['email'];
-if (isset($_POST['pay'])) {
+if (isset($_GET['pay'])) {
     // Get data from the form
     $email = $_POST['email'];
     $name = $_POST['name'];

@@ -117,12 +117,12 @@ $username = $_SESSION['email'];
                 {$row=mysqli_fetch_array($res);
                 #$row=mysqli_fetch_array($res);
                     #$image=$row['image'];
-                    $image2="../../image/".$image;
-                    echo $image2;
+                    #$image2="../../image/".$image;
+                    #echo $image2;
                     ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="grids5-info">
-                        <a href="#blog" class="blog-image d-block zoom"><img src=<?php echo $image2;?>
+                        <a href="#blog" class="blog-image d-block zoom"><img src=<?php echo $row['image'];?>
                                 alt="" class="img-fluid news-image"/>
                             <div class="image-overlay">
                                 <span class="fas fa-plus"></span>

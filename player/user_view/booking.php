@@ -103,7 +103,7 @@ $arr = mysqli_fetch_assoc($res);
     
     <section class="w3l-contact-11 py-5" id="contact">
         <div class="container py-lg-5 py-md-4 py-2">
-            <h3 class="title-style text-center mb-lg-5 mb-4">Contact <span>Us</span></h3>
+            <h3 class="title-style text-center mb-lg-5 mb-4">Book <span>Now</span></h3>
             <!--div class="row text-center mb-5 pb-lg-5 pb-sm-4">
                 <div class="col-lg-3 col-sm-6 contact-info">
                     <i class="fas fa-map-marked-alt"></i>
@@ -148,13 +148,16 @@ $arr = mysqli_fetch_assoc($res);
     <input type="time" name="etime" placeholder="Ending Time" class="contact-input" required>
 </div>
 <div class="col-sm-6 form-input">
-    <input type="number" name="amount" placeholder="Amount" class="contact-input" required >
+    <input type="number" name="amount" placeholder="Amount" class="contact-input" require>
 </div>
 </div>
 <div class="read-more mt-4 pt-lg-2 text-center">
 <input type="hidden" name="email" value="<?php echo $email; ?>">
 
-<input type="submit" name="pay">
+<div class="read-more mt-4 pt-lg-2 text-center">
+                            <a type="button" name="pay"  href="../payment/index.html?email=<?php echo $arr['email']; ?>" class="btn btn-primary">Pay Now</a>
+                            </div>
+                        
                         
 
                     
@@ -343,13 +346,52 @@ $arr = mysqli_fetch_assoc($res);
     <!-- //Js scripts -->
     </main><!-- End #main -->
 
-<?php
 
-
-
-require '../footer.html';
-
-?>
 </body>
 
 </html>
+
+
+<?php
+   include '../footer.html';
+   require('../keys.php');
+?>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script>
+    function pay(amt,id) {
+        <?php
+            $sql = "select * from registration where email='$username'";
+            $res = select_data($sql);
+            $row = mysqli_fetch_assoc($res);
+
+            ?>
+        var options = {
+            "key": "<?php echo $apikey ?>", // Enter the Key ID generated from the Dashboard
+            "amount": amt *
+                100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "TurfBooking",
+            "description": "Payment",
+            
+            //"order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the id obtained in the response of Step 1
+            "callback_url": "../../php/success.php?amt=" + amt + "&id=" + id,
+
+
+
+            "prefill": {
+                "name": "<?php echo $row['name'] ?>",
+                "email": "<?php echo $row['email'] ?>",
+                "contact": "<?php echo $row['phone_no'] ?>"
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+    }
+    </script>
