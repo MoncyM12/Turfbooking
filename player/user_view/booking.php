@@ -9,7 +9,9 @@ session_start();
 require("../connect.php");
 
 $username = $_SESSION['email'];
-$email=$_GET['email'];
+$temail=$_SESSION['t_email'];
+
+
 $sql = "select * from registration where email='$username'";
 $res = select_data($sql);
 $arr = mysqli_fetch_assoc($res);
@@ -147,15 +149,12 @@ $arr = mysqli_fetch_assoc($res);
 <div class="col-sm-6 form-input">
     <input type="time" name="etime" placeholder="Ending Time" class="contact-input" required>
 </div>
-<div class="col-sm-6 form-input">
-    <input type="number" name="amount" placeholder="Amount" class="contact-input" require>
-</div>
 </div>
 <div class="read-more mt-4 pt-lg-2 text-center">
-<input type="hidden" name="email" value="<?php echo $email; ?>">
+<input type="hidden" name="email" value="<?php echo $temail; ?>">
 
 <div class="read-more mt-4 pt-lg-2 text-center">
-                            <a type="button" name="pay"  href="../payment/index.html?email=<?php echo $arr['email']; ?>" class="btn btn-primary">Pay Now</a>
+                            <button name="pay" class="btn btn-primary">Book</button>
                             </div>
                         
                         
@@ -166,6 +165,12 @@ $arr = mysqli_fetch_assoc($res);
             </div>
         </div>
     </section>
+
+
+
+
+
+    
     <!-- map -->
     <!--div class="map">
         <iframe
@@ -359,7 +364,7 @@ $arr = mysqli_fetch_assoc($res);
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
     <script>
-    function pay(amt,id) {
+    function pay(amount,user_id) {
         <?php
             $sql = "select * from registration where email='$username'";
             $res = select_data($sql);
@@ -368,14 +373,14 @@ $arr = mysqli_fetch_assoc($res);
             ?>
         var options = {
             "key": "<?php echo $apikey ?>", // Enter the Key ID generated from the Dashboard
-            "amount": amt *
+            "amount": amount *
                 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "TurfBooking",
             "description": "Payment",
             
             //"order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the id obtained in the response of Step 1
-            "callback_url": "../../php/success.php?amt=" + amt + "&id=" + id,
+            "callback_url": "../../php/success.php?amt=" + amount + "&id=" + user_id,
 
 
 

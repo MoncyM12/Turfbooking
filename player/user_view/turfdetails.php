@@ -3,8 +3,11 @@ Author: W3layouts
 Author URL: http://w3layouts.com
 -->
 <?php 
+   session_start();
+
     require("../connect.php");
     $email=$_GET['email'];
+    $_SESSION['t_email']=$email;
     $sql="SELECT * FROM turf  WHERE email='$email'";
     $res=select_data($sql);
     $row=mysqli_fetch_assoc($res);
@@ -218,7 +221,11 @@ Author URL: http://w3layouts.com
                                 <li class="disable"> <span class="fa fa-check"></span> Pants - shorten/lengthen</li>
                             </ul-->
                             <div class="read-more mt-4 pt-lg-2 text-center">
-                            <a href="booking.php?email=<?php echo $row['email']; ?>" class="btn btn-primary">Book Now</a>
+                                <form action="booking.php" method="post">
+                                
+                            <button class="btn btn-primary">Book Now</button>
+
+                            </form>
                             </div>
                         </div>
                     </div>

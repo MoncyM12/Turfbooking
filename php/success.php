@@ -12,17 +12,17 @@
     require('../connect.php');
     if (isset($_GET['amount'])) {
         $email = $_SESSION['email'];
-        $amt = $_GET['amount'];
-        $bid = $_GET['id'];
+        $amount = $_GET['amount'];
+        $bid = $_GET['user_id'];
         $date = date('Y-m-d H:i:s');
 
 
-        $sql = "insert into payment (booking_id,amount,paid_date) values ('$bid','$amt','$date')";
+        $sql = "insert into payment (booking_id,amount,paid_date) values ('$bid','$amount','$date')";
         insert_data($sql);
 
         $pay_id = mysqli_insert_id($conn);
 
-        $sql = "select * from booking where booking_id='$bid'";
+        $sql = "select * from booking where user_id='$bid'";
         $res = select_data($sql);
 
         while ($row = mysqli_fetch_assoc($res)) {
