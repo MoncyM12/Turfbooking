@@ -43,8 +43,8 @@ include("header.php");
                   <th scope="col">Booking ID</th>
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
-                  <th scope="col">Phone no</th>
-                  <th scope="col">Date</th>
+                  <th scope="col">Expiration Date</th>
+                  <th scope="col">Amount</th>
                   <th scope="col">Starting Time</th>
                   <th scope="col">End Time</th>
                   <th scope="col">Amount Time</th>

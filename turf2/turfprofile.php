@@ -8,17 +8,17 @@ include("header.php");
               <h5 class="card-title">Turf Details</h5>
 
               <!-- Floating Labels Form -->
-              <form class="row g-3" method='post' action="../php/turfprofile.php">
+              <form class="row g-3" method='post' action="../php/turfprofile.php" enctype="multipart/form-data">
                 <div class="col-md-12">
                   <div class="form-floating">
                     <input type="text" name="name" class="form-control" id="floatingName" placeholder="Your Name"  >
-                    <label for="floatingName">Your Name</label>
+                    <label for="floatingName">Turf Name</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
                     <input type="email" name="email" class="form-control" id="floatingEmail" placeholder="Your Email">
-                    <label for="floatingEmail">Your Email</label>
+                    <label for="floatingEmail">Turf Email</label>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -36,7 +36,7 @@ include("header.php");
                 <div class="col-md-6">
                   <div class="col-md-12">
                     <div class="form-floating">
-                      <input type="file" name="image" class="form-control" id="floatingImage" placeholder="image">
+                      <input type="file" name="image" class="form-control" id="photo" placeholder="image" required="">
                       <label for="floatingImage">Image</label>
                     </div>
                   </div>
@@ -69,3 +69,4 @@ include("header.php");
 include 'footer.html';
 
 ?>
+

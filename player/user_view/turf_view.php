@@ -17,6 +17,7 @@ $username = $_SESSION['email'];
    
 ?>
 
+
 <!doctype html>
 <html lang="en">
 
@@ -35,7 +36,7 @@ $username = $_SESSION['email'];
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="index.html">
-                    Turf<span>Master</span>
+                    Turf<span>Tracker</span>
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
@@ -48,7 +49,7 @@ $username = $_SESSION['email'];
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <!--li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>
                         </li>
                         <li class="nav-item">
@@ -56,7 +57,7 @@ $username = $_SESSION['email'];
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
+                        </li-->
                     </ul>
                     <form action="#error" method="GET" class="d-flex search-header">
                         <input class="form-control" type="search" placeholder="Enter Keyword..." aria-label="Search"
@@ -122,7 +123,7 @@ $username = $_SESSION['email'];
                     ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="grids5-info">
-                        <a href="#blog" class="blog-image d-block zoom"><img src=<?php echo $row['image'];?>
+                        <a href="#blog" class="blog-image d-block zoom"><img class="card-img-top" src="../../image/<?php echo $row['image']; ?>"
                                 alt="" class="img-fluid news-image"/>
                             <div class="image-overlay">
                                 <span class="fas fa-plus"></span>

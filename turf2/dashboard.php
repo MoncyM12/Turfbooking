@@ -31,14 +31,14 @@ include "header.php"
             <div class="col-lg-6">
               <div class="info-box card">
                 <i class="bi bi-telephone"></i>
-                <h3>bookings</h3>
+                <a href="profile.php"><h3>bookings</h3></a>
                <!-- <p>+1 5589 55488 55<br>+1 6678 254445 41</p>-->
               </div>
             </div>
             <div class="col-lg-6">
               <div class="info-box card">
                 <i class="bi bi-envelope"></i>
-                <h3>Customer Details</h3>
+                <a href="turfupdate.php"><h3>Edit Turf</h3></a>
                 <!--<p>info@example.com<br>contact@example.com</p>-->
               </div>
             </div>

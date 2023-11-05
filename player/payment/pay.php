@@ -85,7 +85,7 @@ input[type="radio"] {
                                     <h6>Card Owner Email</h6>
                                 </label>
                             
-                                <input type="text" name="email" placeholder="Card Owner Name" required class="form-control"  value="<?php echo $arr['email'];?>"/>
+                                <input type="email" name="email" placeholder="Card Owner Name" required class="form-control"  value="<?php echo $arr['email'];?>"/>
                             </div>
                            
                             <div class="form-group">
@@ -115,16 +115,16 @@ input[type="radio"] {
                                         <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
                                             <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
                                         </label>
-                                        <input type="text" required class="form-control" />
+                                        <input type="number" required class="form-control" />
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group mb-4">
-                                        <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                        <label data-toggle="tooltip" title="The amount you should have payed">
                                             <h6>Amount <i class="fa fa-question-cirle d-inline"></i></h6>
                                         </label>
                                         
-                                        <input name="amount" type="text" required class="form-control" value="<?php echo $arr['amount'];?>"/>
+                                        <input name="amount" disabled type="text" required class="form-control" value="<?php echo $arr['amount'];?>"/>
                                     </div>
                                 </div>
  

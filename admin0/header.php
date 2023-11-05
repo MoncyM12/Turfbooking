@@ -515,6 +515,13 @@ require("../connect.php");
           <span>Complaints</span>
         </a>
       </li><!-- End Blank Page Nav -->
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="complaints.php">
+          <i class="bi bi-file-earmark"></i>
+          <span>Payment Details</span>
+        </a>
+      </li>
 
     </ul>
 
