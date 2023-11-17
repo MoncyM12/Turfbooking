@@ -522,12 +522,15 @@ require("../connect.php");
           <span>Payment Details</span>
         </a>
       </li>
+<<<<<<< HEAD
       <li class="nav-item">
         <a class="nav-link collapsed" href="user_view/turf_view.php">
           <i class="bi bi-file-earmark"></i>
           <span>User Verification</span>
         </a>
       </li>
+=======
+>>>>>>> 4b54a9baf05575f1abe7f284b147edb753d00f6d
 
     </ul>
 

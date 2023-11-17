@@ -149,12 +149,27 @@ input[type="radio"] {
 
                                 <div class="col-sm-4">
                                     <div class="form-group mb-4">
+<<<<<<< HEAD
+=======
+                                        <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                            <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                        </label>
+                                        <input type="number" required class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group mb-4">
+>>>>>>> 4b54a9baf05575f1abe7f284b147edb753d00f6d
                                         <label data-toggle="tooltip" title="The amount you should have payed">
                                             <h6>Amount <i class="fa fa-question-cirle d-inline"></i></h6>
                                         </label>
                                         
+<<<<<<< HEAD
                                         <input type="text" name="amount1" disabled  required class="form-control" value="<?php echo $arr['amount'];?>"/>
                                         <input type="hidden" name="amount"  required class="form-control" value="<?php echo $arr['amount'];?>"/>
+=======
+                                        <input name="amount" disabled type="text" required class="form-control" value="<?php echo $arr['amount'];?>"/>
+>>>>>>> 4b54a9baf05575f1abe7f284b147edb753d00f6d
                                     </div>
                                 </div>
  
