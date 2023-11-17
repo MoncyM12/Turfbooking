@@ -17,13 +17,12 @@ if(isset($_POST["submit"])){
     $t_email=$_POST['email'];
     $t_city=$_POST['city'];
     $t_about=$_POST['about'];
-    $t_image=$_POST['image'];
-    $t_id=$_POST['id_proof'];
+    $t_image=$_FILES['image']['name'];
+    $t_id = $_FILES['id_proof']['name'];
     $t_price=$_POST['price'];
     $sql="select * from turf where email='$t_email'";
     $res=select_data($sql);
     $c=mysqli_num_rows($res);
-    echo $c;
     if($c)
     {
 
@@ -43,11 +42,21 @@ if(isset($_POST["submit"])){
        
     }
     
+    
+   
+       
+    }
+    
 if ($c==0)
 {
 
     $sql="INSERT INTO turf(name,email,city,about,image,id_proof,price,owner_email) VALUES ('$t_name','$t_email','$t_city','$t_about','$t_image','$t_id','$t_price','$owner')";
     #echo $sql;
+    #insert_data($sql);
+
+    $targetDirectory = "../image/";
+    $target_file = $targetDirectory . basename($_FILES["image"]["name"]);
+    move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
     
     if (insert_data($sql)) { 
         ?>
@@ -73,11 +82,11 @@ if ($c==0)
         </script>
 
 
-
+        
     <?php
     }
  }
-}
+
 
 
 

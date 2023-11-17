@@ -13,6 +13,7 @@ require("../connect.php");
 session_start();
 if(isset($_POST["submit"])){
 
+    
     $reg_name=$_POST['name'];
     $reg_email=$_SESSION['email'];
     $reg_phone_no=$_POST['phone'];

@@ -103,7 +103,7 @@ $username = $_SESSION['email'];
    
     <!-- blog section -->
     <?php
-            $sql = "select * from turf";
+            $sql = "select * from turf where owner_email='$username'";
             $res = select_data($sql);
             $n=mysqli_num_rows($res);
             ?>
@@ -122,7 +122,7 @@ $username = $_SESSION['email'];
                     ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="grids5-info">
-                        <a href="#blog" class="blog-image d-block zoom"><img src=<?php echo $row['image'];?>
+                        <a href="#blog" class="blog-image d-block zoom"><img class="card-img-top" src="../../image/<?php echo $row['image']; ?>"
                                 alt="" class="img-fluid news-image"/>
                             <div class="image-overlay">
                                 <span class="fas fa-plus"></span>

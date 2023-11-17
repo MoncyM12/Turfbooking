@@ -41,7 +41,7 @@ echo "Amount: " . $amount . "<br>";
          icon: 'success',
          text: 'Verified',
          didClose: () => {
-             window.location.replace('../player/payment/pay.php');
+            window.location.replace('mail.php?email=<?php echo $email ?>&book_id=<?php echo $book_id ?>');
          }
      });
  </script>

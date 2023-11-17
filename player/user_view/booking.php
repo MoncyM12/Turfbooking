@@ -140,15 +140,39 @@ $arr = mysqli_fetch_assoc($res);
 <div class="col-sm-6 form-input">
     <input type="number" name="contact" placeholder="Phone Number" class="contact-input" value="<?php echo isset($arr['phone_no']) ? $arr['phone_no'] : ''; ?>">
 </div>
+<?php
+$currentDate = date('Y-m-d');
+?>
+
 <div class="col-sm-6 form-input">
-    <input type="date" name="date" placeholder="Booking Date" class="contact-input" required>
+    <input type="date" name="date" placeholder="Booking Date" class="contact-input" required min="<?php echo $currentDate; ?>">
 </div>
+
 <div class="col-sm-6 form-input">
-    <input type="time" name="stime" placeholder="Starting Time" class="contact-input" required>
+    <input type="time" name="stime" placeholder="Starting Time" class="contact-input" id="startTime" required>
 </div>
+
+<script>
+    // Get current time in HH:mm format
+    var currentTime = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+
+    // Set the minimum time for the input field
+    document.getElementById('startTime').min = currentTime;
+</script>
+
+
 <div class="col-sm-6 form-input">
-    <input type="time" name="etime" placeholder="Ending Time" class="contact-input" required>
+    <input type="time" name="etime" placeholder="Ending Time" class="contact-input" id="endTime" required>
 </div>
+
+<script>
+    // Get current time in HH:mm format
+    var currentTime = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+
+    // Set the minimum time for the input field
+    document.getElementById('endTime').min = currentTime;
+</script>
+
 </div>
 <div class="read-more mt-4 pt-lg-2 text-center">
 <input type="hidden" name="email" value="<?php echo $temail; ?>">

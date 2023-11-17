@@ -515,6 +515,19 @@ require("../connect.php");
           <span>Complaints</span>
         </a>
       </li><!-- End Blank Page Nav -->
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="complaints.php">
+          <i class="bi bi-file-earmark"></i>
+          <span>Payment Details</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="user_view/turf_view.php">
+          <i class="bi bi-file-earmark"></i>
+          <span>User Verification</span>
+        </a>
+      </li>
 
     </ul>
 

@@ -151,35 +151,35 @@ include("header.php");
                     <div class="row mb-3">
                       <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="phone" type="text" class="form-control" id="Phone" value=<?php echo $arr['phone_no'];?>>
+                        <input name="phone" type="text" class="form-control" id="Phone" pattern="\d{10}" title="Please enter 10 digits" value=<?php echo $arr['phone_no'];?>>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Pincode</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="pincode" type="text" class="form-control" id="Phone" value=<?php echo $arr['pincode_no'];?>>
+                        <input name="pincode" type="text" class="form-control" pattern="\d{6}" title="Please enter 6 digits" id="Phone" value=<?php echo $arr['pincode_no'];?>>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="company" class="col-md-4 col-lg-3 col-form-label">House Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="house" type="text" class="form-control" id="company" value=<?php echo $arr['house_name'];?>>
+                        <input name="house" type="text" class="form-control" id="company" pattern="[A-Za-z]+" title="Please enter only letters" value=<?php echo $arr['house_name'];?>>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Job" class="col-md-4 col-lg-3 col-form-label">City Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="city" type="text" class="form-control" id="Job" value=<?php echo $arr['city_name'];?>>
+                        <input name="city" type="text" class="form-control" id="Job" pattern="[A-Za-z]+" title="Please enter only letters" value=<?php echo $arr['city_name'];?>>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Country" class="col-md-4 col-lg-3 col-form-label">Distirct</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="district" type="text" class="form-control" id="Country" value=<?php echo $arr['district_name'];?>>
+                        <input name="district" type="text" class="form-control" id="Country" pattern="[A-Za-z]+" title="Please enter only letters" value=<?php echo $arr['district_name'];?>>
                       </div>
                     </div>
 

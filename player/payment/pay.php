@@ -85,46 +85,76 @@ input[type="radio"] {
                                     <h6>Card Owner Email</h6>
                                 </label>
                             
-                                <input type="text" name="email" placeholder="Card Owner Name" required class="form-control"  value="<?php echo $arr['email'];?>"/>
+                                <input type="email" name="email" placeholder="Card Owner Name" required class="form-control"  value="<?php echo $arr['email'];?>"/>
                             </div>
                            
                             <div class="form-group">
-                                <label for="cardNumber">
-                                    <h6>Card number</h6>
-                                </label>
-                                <div class="input-group">
-                                    <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control" required />
-                                    <div class="input-group-append">
-                                        <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <div class="form-group">
-                                        <label>
-                                            <span class="hidden-xs">
-                                                <h6>Expiration Date</h6>
-                                            </span>
-                                        </label>
-                                        <div class="input-group"><input type="number" placeholder="MM" name="exp" class="form-control" required /> <input type="number" placeholder="YY" name="" class="form-control" required /></div>
-                                    </div>
-                                </div>
+    <label for="cardNumber">
+        <h6>Card number</h6>
+    </label>
+    <div class="input-group">
+        <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control" maxlength="12" pattern="\d{12}" title="Please enter exactly 12 digits" required />
+        <div class="input-group-append">
+            <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-8">
+        <div class="form-group">
+            <label>
+                <span class="hidden-xs">
+                    <h6>Expiration Date</h6>
+                </span>
+            </label>
+            <div class="input-group">
+                <select name="month" class="form-control" required>
+                    <option value="" disabled selected>Month</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <select name="year" class="form-control" required>
+                    <option value="" disabled selected>Year</option>
+                    <?php
+                        $currentYear = date("Y");
+                        for ($i = $currentYear; $i <= $currentYear + 10; $i++) {
+                            echo "<option value=\"$i\">$i</option>";
+                        }
+                    ?>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-4">
+    <div class="form-group mb-4">
+        <label data-toggle="tooltip" title="Three-digit CV code on the back of your card">
+            <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+        </label>
+        <input type="number" maxlength="4" pattern="[0-9]{4}" title="Please enter 4 digits" required class="form-control" />
+    </div>
+</div>
+
                                 <div class="col-sm-4">
                                     <div class="form-group mb-4">
-                                        <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
-                                            <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
-                                        </label>
-                                        <input type="text" required class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="form-group mb-4">
-                                        <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                        <label data-toggle="tooltip" title="The amount you should have payed">
                                             <h6>Amount <i class="fa fa-question-cirle d-inline"></i></h6>
                                         </label>
                                         
-                                        <input name="amount" type="text" required class="form-control" value="<?php echo $arr['amount'];?>"/>
+                                        <input type="text" name="amount1" disabled  required class="form-control" value="<?php echo $arr['amount'];?>"/>
+                                        <input type="hidden" name="amount"  required class="form-control" value="<?php echo $arr['amount'];?>"/>
                                     </div>
                                 </div>
  

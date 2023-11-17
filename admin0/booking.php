@@ -40,6 +40,7 @@ include("header.php");
               <thead>
                 <tr>
                   <th scope="col">Sl no:</th>
+                  <th scope="col">Booking ID</th>
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
                   <th scope="col">Phone no</th>
@@ -73,8 +74,10 @@ include("header.php");
                       <?php echo $n++; ?>
                     </th>
 
-
                     <td>
+                      <?php echo $row['booking_id'] ?>
+                    </td>
+                  <td>
                       <?php echo $row['name'] ?>
                     </td>
                     <td>
